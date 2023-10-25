@@ -1,0 +1,18 @@
+{% extends 'authors/base.html' %}
+
+
+{% block title %} {{ author.id }} page {% endblock %}
+
+{% block content %}
+<h1>Author - {{ author }}</h1>
+{% for post in posts %}
+<h3>
+    {% if post.is_published %}
+    <a href="{% url 'post' post.id %}">{{ post.title }}</a>
+    {% else %}
+    {{post.title}}
+    {% endif %}
+</h3>
+<h4>{{post.category}}</h4>
+<p>{{post.count_views}} views</p>
+{% endfor %} {% endblock %}

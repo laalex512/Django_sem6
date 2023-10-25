@@ -1,0 +1,15 @@
+{% extends 'games_app/base.html' %}
+
+
+{% block title %} Main page {% endblock %}
+
+{% block content %}
+<h1>Main page</h1>
+<h3>Select the game</h3>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Отправить">
+</form>
+
+{% endblock %}
